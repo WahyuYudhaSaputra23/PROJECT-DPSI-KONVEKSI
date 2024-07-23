@@ -21,6 +21,10 @@ var sequelize = require('./models/index').sequelize;
 
 var app = express();
 
+// Set the view engine to Pug
+app.set('views', path.join(__dirname, 'views')); // Directory where Pug templates are located
+app.set('view engine', 'pug'); // Set the view engine to Pug
+
 app.use(logger('dev'));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
